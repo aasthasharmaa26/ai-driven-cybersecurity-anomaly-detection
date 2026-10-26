@@ -129,15 +129,6 @@ The FastAPI app is in `backend/main.py`. Its imports use project-root-relative p
 
 The GitHub-ready copy excludes local SQLite databases, generated logs, Python bytecode caches, and the `data/raw` path. Before publishing, verify that the remaining dataset files may be redistributed and that no confidential internship logs, credentials, IP addresses, or internal C-DOT information are included.
 
-## Suggested college presentation
-
-1. Problem statement: large volumes of system logs make unusual behavior difficult to spot manually.
-2. Objective: experiment with multiple ML/DL approaches for log anomaly detection.
-3. Methodology: normalize logs, vectorize text, train models, and evaluate predictions.
-4. Models: Isolation Forest, One-Class SVM, Autoencoder, and XGBoost.
-5. Implementation: scripts, model artifacts, and the FastAPI prototype.
-6. Results: insert verified metrics and confusion matrices after evaluation.
-7. Limitations and future work: label alignment, false positives, real-time pipeline validation, and temporal relationships between events.
 
 ## Attribution
 
