@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+.pytest_cache/
+.mypy_cache/
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+*.logs
+
+# Local/editor/system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large or sensitive raw data - review before adding intentionally
+data/raw/

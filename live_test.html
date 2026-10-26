@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Live Cyber Alerts</title>
+
+    <style>
+
+        body {
+
+            background-color: black;
+            color: lime;
+            font-family: Arial;
+            padding: 20px;
+
+        }
+
+        h1 {
+
+            color: red;
+
+        }
+
+        .alert {
+
+            border: 1px solid red;
+            padding: 10px;
+            margin-top: 10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>🚨 LIVE CYBER ALERTS</h1>
+
+    <div id="alerts"></div>
+
+    <script>
+
+        // CONNECT TO FASTAPI WEBSOCKET
+        const ws = new WebSocket("ws://127.0.0.1:8000/ws");
+
+        // WHEN MESSAGE RECEIVED
+        ws.onmessage = function(event) {
+
+            const data = JSON.parse(event.data);
+
+            const alertsDiv =
+                document.getElementById("alerts");
+
+            alertsDiv.innerHTML += `
+
+                <div class="alert">
+
+                    <h3>${data.log}</h3>
+
+                    <p>
+
+                        Anomaly:
+                        ${data.anomaly_detected}
+
+                    </p>
+
+                    <p>
+
+                        Error:
+                        ${data.reconstruction_error}
+
+                    </p>
+
+                </div>
+
+            `;
+        };
+
+        // CONNECTED
+        ws.onopen = function() {
+
+            console.log("Connected 😭🔥");
+
+            ws.send("frontend connected");
+
+        };
+
+    </script>
+
+</body>
+
+</html>
